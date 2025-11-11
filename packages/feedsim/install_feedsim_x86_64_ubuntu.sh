@@ -164,7 +164,7 @@ if ! [ -d "openssl" ]; then
     mkdir -p build-deps
     git clone --branch OpenSSL_1_1_1b --depth 1 https://github.com/openssl/openssl.git
     cd "openssl"
-    ./config --prefix="${FEEDSIM_THIRD_PARTY_SRC}/build-deps"
+    CC=gcc CXX=g++ ./config --prefix="${FEEDSIM_THIRD_PARTY_SRC}/build-deps"
     make -j"$(nproc)"
     make install
     cd ../

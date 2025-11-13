@@ -27,7 +27,7 @@ ExternalProject_Add(folly
         -DCMAKE_CXX_STANDARD:STRING=17
         -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
     BINARY_DIR ${oldisim_BINARY_DIR}/third_party/folly
-    BUILD_BYPRODUCTS <INSTALL_DIR>/lib/libfolly.a
+    BUILD_BYPRODUCTS /usr/local/lib/libfolly.a
     BUILD_COMMAND
         cmake --build .
     )
@@ -37,11 +37,11 @@ ExternalProject_Get_Property(folly SOURCE_DIR)
 ExternalProject_Get_Property(folly INSTALL_DIR)
 
 set(FOLLY_LIBRARIES
-    ${INSTALL_DIR}/lib/libfolly.a)
+    /usr/local/lib/libfolly.a)
 set(FOLLY_BENCHMARK_LIBRARIES
-    ${INSTALL_DIR}/lib/folly/libfollybenchmark.a)
+    /usr/local/lib/folly/libfollybenchmark.a)
 set(FOLLY_TEST_UTIL_LIBRARIES
-    ${INSTALL_DIR}/lib/libfolly_test_util.a)
+    /usr/local/lib/libfolly_test_util.a)
 
 set(FOLLY_INCLUDE_DIR ${INSTALL_DIR}/include)
 message(STATUS "Folly Library: ${FOLLY_LIBRARIES}")
